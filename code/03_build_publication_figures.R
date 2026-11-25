@@ -182,116 +182,78 @@ draw_fig1_grob <- function() {
   grobs <- gList(
     rectGrob(gp = gpar(fill = "white", col = NA)),
 
-    # Panel headers & subtle vertical divider
+    # Panel headers (short, ICML-style) & divider
     txt(0.20, 4.30, "a", size = 13.5, face = "bold", hjust = 0),
-    txt(0.48, 4.30, "Time-Zero Design & Study Cohorts", size = 11.0, face = "bold", hjust = 0),
+    txt(0.48, 4.30, "Time-zero design", size = 11.0, face = "bold", hjust = 0),
     txt(5.12, 4.30, "b", size = 13.5, face = "bold", hjust = 0),
-    txt(5.42, 4.30, "Latent Phenotyping & Evaluations", size = 11.0, face = "bold", hjust = 0),
+    txt(5.42, 4.30, "Latent phenotyping", size = 11.0, face = "bold", hjust = 0),
     segmentsGrob(x0 = ux(4.86), y0 = uy(0.22), x1 = ux(4.86), y1 = uy(4.36), gp = gpar(col = "#CBD5E1", lwd = 1.1)),
 
-    # ---------------- PANEL (a): Time-Zero Gate & Compact Cohorts -------------
+    # ---------------- PANEL (a) ----------------
     rbox(0.20, 2.74, 2.52, 1.18, fill = "#EBF4FA", col = "#2B5C8F", lwd = 1.3, r = 0.12),
-    icon_tube(0.56, 3.32),
-    txt(0.86, 3.56, "ED Pre-Admission", size = 9.0, face = "bold", hjust = 0),
-    txt(0.86, 3.26, "First-draw CBC & BMP", size = 8.0, col = "#334155", hjust = 0),
-    txt(0.86, 2.98, "[-24 h, t = 0]", size = 8.0, face = "bold", col = "#2B5C8F", hjust = 0),
+    icon_tube(0.62, 3.32),
+    txt(0.98, 3.46, "ED labs", size = 9.5, face = "bold", hjust = 0),
+    txt(0.98, 3.10, "[\u221224 h, 0]", size = 8.6, col = "#2B5C8F", hjust = 0),
 
-    # Vertical t = 0 Admission Gate
     segmentsGrob(x0 = ux(2.92), y0 = uy(2.66), x1 = ux(2.92), y1 = uy(4.00), gp = gpar(col = "#C0392B", lwd = 1.7, lty = "dashed")),
-    txt(2.92, 4.10, "t = 0 Admission", size = 7.6, face = "bold", col = "#C0392B"),
+    txt(2.92, 4.10, "t = 0", size = 8.6, face = "bold", col = "#C0392B"),
 
-    # Blocked Inpatient Care box
     rbox(3.10, 2.74, 1.56, 1.18, fill = "#F8FAFC", col = "#CBD5E1", lwd = 1.1, lty = "dashed", r = 0.12),
-    txt(3.88, 3.58, "Inpatient Care", size = 8.3, face = "bold", col = "#64748B"),
-    txt(3.88, 3.25, "Surgery / Fluids /\nTransfusion", size = 7.4, col = "#64748B"),
-    txt(3.88, 2.90, "Excluded from LPA", size = 7.2, face = "bold", col = "#C0392B"),
+    txt(3.88, 3.33, "Inpatient care", size = 8.6, face = "bold", col = "#94A3B8"),
 
-    # Arrow down to Analytic Cohort
     arr(1.46, 2.72, 1.46, 2.26, col = "#1E293B", lwd = 1.5),
     rbox(0.20, 1.44, 2.52, 0.78, fill = "#FFFFFF", col = "#1E293B", lwd = 1.3, r = 0.14),
-    txt(1.46, 1.95, "Hip Fracture Cohort", size = 9.0, face = "bold"),
-    txt(1.46, 1.65, "Age \u2265 65 y  (n = 2,488)", size = 8.1, col = "#334155"),
+    txt(1.46, 1.83, "Hip fracture, \u226565 y", size = 9.2, face = "bold"),
 
-    # Split into Derivation & Validation
     arr(0.92, 1.42, 0.82, 0.98, col = "#2B5C8F", lwd = 1.4),
     arr(2.00, 1.42, 2.12, 0.98, col = "#00897B", lwd = 1.4),
-
     rbox(0.18, 0.24, 1.28, 0.70, fill = "#EBF4FA", col = "#2B5C8F", lwd = 1.2, r = 0.14),
-    txt(0.82, 0.70, "Derivation", size = 8.3, face = "bold", col = "#2B5C8F"),
-    txt(0.82, 0.43, "\u22642016 (n = 1,312)", size = 7.4),
-
+    txt(0.82, 0.59, "\u22642016", size = 9.0, face = "bold", col = "#2B5C8F"),
     rbox(1.54, 0.24, 1.30, 0.70, fill = "#E6F5F3", col = "#00897B", lwd = 1.2, r = 0.14),
-    txt(2.19, 0.70, "Validation", size = 8.3, face = "bold", col = "#00897B"),
-    txt(2.19, 0.43, "\u22652017 (n = 956)", size = 7.4),
+    txt(2.19, 0.59, "\u22652017", size = 9.0, face = "bold", col = "#00897B"),
 
-    # Cross-Fracture Generalization Pill
     rbox(3.10, 0.24, 1.56, 1.98, fill = "#F8FAFC", col = "#475569", lwd = 1.15, r = 0.10),
-    txt(3.88, 1.85, "Cross-Fracture\nCohort", size = 8.5, face = "bold"),
-    txt(3.88, 1.22, "Non-hip major\nfractures \u2265 65 y", size = 7.6, col = "#334155"),
-    txt(3.88, 0.72, "n = 5,508", size = 8.4, face = "bold", col = "#2B5C8F"),
-    txt(3.88, 0.44, "(Frozen model)", size = 7.2, col = "#64748B"),
+    txt(3.88, 1.23, "Non-hip\nfractures", size = 9.0, face = "bold", lh = 1.15),
 
-    # ---------------- PANEL (b): Dashed Latent Engine + 3 Pastel Cards --------
+    # ---------------- PANEL (b) ----------------
     rbox(5.12, 0.24, 4.66, 3.70, fill = "#FCFDFF", col = "#334155", lwd = 1.15, lty = "dashed", r = 0.08),
 
-    # 3D Biomarker Axis Icon (left inside dashed box)
-    arr(5.82, 2.42, 5.82, 3.08, col = "#111111", lwd = 1.4, len_mm = 1.7),
-    arr(5.82, 2.42, 6.44, 2.42, col = "#111111", lwd = 1.4, len_mm = 1.7),
-    arr(5.82, 2.42, 5.46, 2.02, col = "#111111", lwd = 1.4, len_mm = 1.7),
-    txt(5.82, 3.22, "Hb / RDW", size = 7.5, face = "bold"),
-    txt(6.30, 2.20, "Cr / K / HCO\u2083", size = 7.4, face = "bold"),
-    txt(5.86, 1.80, "WBC / Glu / Plt / Na", size = 7.3, face = "bold"),
-    ellipse_grob(6.08, 2.74, 0.070, 0.070, 0, fill = "#FDEBD0", col = "#111111", lwd = 1.1),
-    txt(5.96, 1.42, "9 Routine ED Labs", size = 8.4, face = "bold"),
+    arr(5.92, 2.22, 5.92, 2.98, col = "#111111", lwd = 1.4, len_mm = 1.7),
+    arr(5.92, 2.22, 6.62, 2.22, col = "#111111", lwd = 1.4, len_mm = 1.7),
+    arr(5.92, 2.22, 5.52, 1.78, col = "#111111", lwd = 1.4, len_mm = 1.7),
+    ellipse_grob(6.20, 2.58, 0.070, 0.070, 0, fill = "#FDEBD0", col = "#111111", lwd = 1.1),
+    txt(5.98, 1.30, "9 ED labs", size = 9.0, face = "bold"),
 
-    # Separate Anticoagulation Pill
-    rbox(5.30, 0.46, 1.42, 0.58, fill = "#FEF9E7", col = "#B7791F", lwd = 1.05, r = 0.16),
-    txt(6.01, 0.75, "Anticoagulation\n(Separate Covariate)", size = 7.2, face = "bold", col = "#7D5A10"),
+    arr(6.72, 2.38, 7.00, 2.38, col = "#111111", lwd = 1.5),
+    rbox(7.02, 1.98, 1.10, 0.80, fill = "#CFE2F3", col = "#3B66C4", lwd = 1.25, r = 0.15),
+    txt(7.57, 2.38, "GMM", size = 9.5, face = "bold"),
 
-    # Arrow -> Diagonal GMM Module
-    arr(6.58, 2.38, 6.94, 2.38, col = "#111111", lwd = 1.5),
-    rbox(6.98, 1.92, 1.18, 0.92, fill = "#CFE2F3", col = "#3B66C4", lwd = 1.25, r = 0.15),
-    txt(7.57, 2.52, "Diagonal GMM", size = 8.5, face = "bold"),
-    txt(7.57, 2.22, "(VVI, K = 3)", size = 8.0, col = "#1E293B"),
-
-    # Arrow -> Host Subphenotype Manifold
-    arr(8.18, 2.38, 8.48, 2.38, col = "#111111", lwd = 1.5),
+    arr(8.14, 2.38, 8.48, 2.38, col = "#111111", lwd = 1.5),
     manifold_grob(9.08, 2.38, 1.14, 1.75, fill = "#EEF3FA", col = "#5A6B82"),
-    txt(9.08, 3.52, "Host Subphenotypes", size = 8.4, face = "bold"),
-
-    # Three Gaussian ellipses on the manifold
     ellipse_grob(8.92, 2.82, 0.17, 0.11, 14, fill = "#D4E6F1", col = "#2B5C8F", lwd = 1.5),
     ellipse_grob(9.22, 2.36, 0.17, 0.11, -10, fill = "#D1F2EB", col = "#00897B", lwd = 1.5),
     ellipse_grob(8.98, 1.88, 0.17, 0.11, 12, fill = "#FADBD8", col = "#C0392B", lwd = 1.5),
+    txt(8.92, 2.82, "P1", size = 7.6, face = "bold", col = "#2B5C8F"),
+    txt(9.22, 2.36, "P2", size = 7.6, face = "bold", col = "#00897B"),
+    txt(8.98, 1.88, "P3", size = 7.6, face = "bold", col = "#C0392B"),
+    txt(9.08, 1.30, "Subphenotypes", size = 9.0, face = "bold"),
 
-    # Subphenotype legend strip inside bottom-right of dashed box
-    ellipse_grob(7.10, 1.16, 0.055, 0.055, 0, fill = "#2B5C8F", col = NA, lwd = 0),
-    txt(7.22, 1.16, "P1: Homeostatic (38.9%)", size = 7.6, face = "bold", col = "#2B5C8F", hjust = 0),
-    ellipse_grob(7.10, 0.86, 0.055, 0.055, 0, fill = "#00897B", col = NA, lwd = 0),
-    txt(7.22, 0.86, "P2: Stress-Inflammatory (35.3%)", size = 7.6, face = "bold", col = "#00897B", hjust = 0),
-    ellipse_grob(7.10, 0.56, 0.055, 0.055, 0, fill = "#C0392B", col = NA, lwd = 0),
-    txt(7.22, 0.56, "P3: Cardiorenal-Anemic (25.8%)", size = 7.6, face = "bold", col = "#C0392B", hjust = 0),
-
-    # Orthogonal 3-Way Arrow Tree -> 3 Pastel Cards + Vector Icons
     segmentsGrob(x0 = ux(9.78), y0 = uy(2.09), x1 = ux(10.06), y1 = uy(2.09), gp = gpar(col = "#111111", lwd = 1.55)),
     segmentsGrob(x0 = ux(10.06), y0 = uy(0.80), x1 = ux(10.06), y1 = uy(3.38), gp = gpar(col = "#111111", lwd = 1.55)),
     arr(10.06, 3.38, 10.34, 3.38, col = "#111111", lwd = 1.55),
     arr(10.06, 2.09, 10.34, 2.09, col = "#111111", lwd = 1.55),
     arr(10.06, 0.80, 10.34, 0.80, col = "#111111", lwd = 1.55),
 
-    # Card 1 (Warm Cream)
     rbox(10.36, 2.88, 2.12, 1.00, fill = "#FDF2D0", col = NA, lwd = 0, r = 0.16),
-    txt(10.52, 3.38, "Aim 1: Prognostic &\nTemporal Validation", size = 9.0, face = "bold", hjust = 0, lh = 1.15),
+    txt(10.52, 3.38, "Aim 1: Prognosis", size = 9.5, face = "bold", hjust = 0),
     icon_surv(13.00, 3.38),
 
-    # Card 2 (Soft Sage Green)
     rbox(10.36, 1.59, 2.12, 1.00, fill = "#E4F2E2", col = NA, lwd = 0, r = 0.16),
-    txt(10.52, 2.09, "Aim 2: Incident AKI &\nDay-7 Landmark", size = 9.0, face = "bold", hjust = 0, lh = 1.15),
+    txt(10.52, 2.09, "Aim 2: Kidney injury", size = 9.5, face = "bold", hjust = 0),
     icon_kidney(13.00, 2.09),
 
-    # Card 3 (Soft Periwinkle Blue)
     rbox(10.36, 0.30, 2.12, 1.00, fill = "#DCE6F7", col = NA, lwd = 0, r = 0.16),
-    txt(10.52, 0.80, "Aim 3: Surgical-Timing\nTarget Trial (CCW)", size = 9.0, face = "bold", hjust = 0, lh = 1.15),
+    txt(10.52, 0.80, "Aim 3: Surgical timing", size = 9.5, face = "bold", hjust = 0),
     icon_ccw(13.00, 0.80)
   )
   gTree(children = grobs)
@@ -511,6 +473,7 @@ p4b <- ggplot(lm7_km, aes(x = day_from_admit, y = surv, color = pheno_lbl, linet
   geom_step(linewidth = 0.85) +
   scale_color_manual(values = PAL_P, name = NULL) +
   scale_linetype_manual(values = c("No AKI" = "solid", "7-d AKI" = "dashed"), name = NULL) +
+  guides(linetype = guide_legend(override.aes = list(color = "#333333"), keywidth = unit(1.0, "cm"))) +
   scale_x_continuous(breaks = c(7, 30, 60, 90), limits = c(7, 90)) +
   scale_y_continuous(limits = c(64, 100), labels = function(x) paste0(x, "%")) +
   labs(x = "Days from Admission (Day-7 Landmark)", y = "Survival Probability") +
@@ -582,8 +545,8 @@ ccw_tab <- read.csv(file.path(V5_T, "Table3_v5_Exploratory_CCW.csv"), stringsAsF
   mutate(
     stratum_clean = factor(gsub("^Day0_All_Eligible: |^Operated_Subgroup: ", "", stratum),
                            levels = rev(c("Overall", "P1: Homeostatic", "P2: Stress-Inflammatory", "P3: Cardiorenal-Anemic"))),
-    cohort_lbl = factor(ifelse(cohort == "Day0_All_Eligible", "All-Eligible (n = 2,485)", "Operated (n = 2,216)"),
-                        levels = c("All-Eligible (n = 2,485)", "Operated (n = 2,216)"))
+    cohort_lbl = factor(ifelse(cohort == "Day0_All_Eligible", "All-eligible", "Operated"),
+                        levels = c("All-eligible", "Operated"))
   )
 
 p5b <- ggplot(ccw_tab, aes(x = rd_30d_pct, y = stratum_clean, color = cohort_lbl)) +
@@ -614,7 +577,8 @@ p5c <- ggplot(ckm_df, aes(x = time, y = surv, color = strategy, fill = strategy)
 
 fig5 <- (wrap_elements(p5a) / wrap_elements(p5b) / wrap_elements(p5c)) +
   plot_layout(heights = c(1.08, 0.80, 0.98)) +
-  plot_annotation(tag_levels = "a")
+  plot_annotation(tag_levels = "a") &
+  theme(plot.tag = element_text(face = "bold", size = 13))
 save_fig(fig5, "Fig5_Exploratory_Target_Trial", 11.4, 8.8)
 
 # ==============================================================================
@@ -724,8 +688,8 @@ save_fig(figs2, "FigS2_CrossFracture_and_Sensitivity", 11.4, 5.2)
 # ==============================================================================
 tr_df <- read.csv(file.path(V5_T, "v5_nonesrd_lcmm_trajectories.csv"), stringsAsFactors = FALSE) %>%
   mutate(t_lbl = factor(recode(traj_class,
-    "T1" = "T1: Preserved Baseline (92.0%)",
-    "T2" = "T2: Elevated Baseline (8.0%)"
+    "T1" = "T1: Preserved baseline",
+    "T2" = "T2: Elevated baseline"
   )))
 
 ps3a <- ggplot(tr_df, aes(x = hour, y = pred_cr, color = t_lbl, fill = t_lbl)) +
