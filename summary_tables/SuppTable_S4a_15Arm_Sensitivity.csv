@@ -1,0 +1,16 @@
+"arm","n","hr","lo","hi","p_value","e_value_common"
+"1. Primary Full Cohort (P3 vs P1)",2488,2.18,1.69,2.8,1.67e-09,2.81
+"2. Chronic-Only CCI (Excl. Acute MI/Stroke)",2488,2.2,1.71,2.84,9.66e-10,2.84
+"3. Excluding Maintenance Dialysis / ESRD",2418,2.17,1.68,2.8,3.09e-09,2.8
+"4. Pre-2017 Derivation Cohort",1312,2.21,1.56,3.14,8.74e-06,2.85
+"5. Post-2016 Validation (Frozen Pre-2017 Z-Scores)",956,2.12,1.42,3.16,0.000239,2.74
+"6. Post-2016 Validation (Era-Standardized Z-Scores)",956,2.54,1.71,3.76,3.73e-06,3.2
+"7. Validation Strict Pre-Pandemic (2017-2019)",372,2.6,1.38,4.92,0.00319,3.26
+"8. Validation 2019-2020 Boundary Interval",196,1.96,0.71,5.39,0.191,2.56
+"9. Validation Strict COVID-19 Era (2020-2022)",388,2.03,1.09,3.79,0.0264,2.64
+"10. Posterior Soft-Probability Weighted",2488,1.97,1.58,2.44,1.06e-09,2.57
+"11. Surgically Treated Subgroup",2219,2.06,1.56,2.72,3.69e-07,2.67
+"12. Diagonal VVI K=2 High-Risk Profile",2488,1.79,1.45,2.22,9.06e-08,2.36
+"13. Full-Covariance VVV K=2 High-Risk Profile",2488,1.83,1.48,2.26,1.77e-08,2.4
+"14. INR-Inclusive 10-Biomarker VVI K=4 Cardiorenal",2488,2.8,2.03,3.86,2.86e-10,3.47
+"15. Same-Hospital Non-Hip Major Fractures",5508,2.94,2.36,3.66,5.94e-22,3.6

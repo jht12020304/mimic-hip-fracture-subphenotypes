@@ -1,0 +1,34 @@
+"stratum","covariate","smd_unweighted","smd_stabilized_ipcw"
+"P1","Age",0.148,0.032
+"P1","Male sex",0.203,0.018
+"P1","Femoral neck fracture",0.038,0.006
+"P1","Pertrochanteric fracture",0.151,0
+"P1","Charlson Index",0.255,0.023
+"P1","Pre-admission anticoagulation",0.255,0.016
+"P1","Medicine admitting service",0.845,0.014
+"P1","Hemoglobin",0.19,0.032
+"P1","log(Creatinine)",0.087,0.053
+"P1","log(WBC)",0.013,0.01
+"P1","Bicarbonate",0.086,0.015
+"P2","Age",0.125,0.042
+"P2","Male sex",0.2,0.007
+"P2","Femoral neck fracture",0.132,0.01
+"P2","Pertrochanteric fracture",0.004,0.029
+"P2","Charlson Index",0.446,0.001
+"P2","Pre-admission anticoagulation",0.314,0.014
+"P2","Medicine admitting service",0.636,0.008
+"P2","Hemoglobin",0.099,0.008
+"P2","log(Creatinine)",0.245,0.012
+"P2","log(WBC)",0.01,0.032
+"P2","Bicarbonate",0.056,0.003
+"P3","Age",0.151,0
+"P3","Male sex",0.235,0.013
+"P3","Femoral neck fracture",0.067,0.003
+"P3","Pertrochanteric fracture",0.039,0.013
+"P3","Charlson Index",0.339,0.01
+"P3","Pre-admission anticoagulation",0.324,0.005
+"P3","Medicine admitting service",0.444,0.015
+"P3","Hemoglobin",0.092,0.018
+"P3","log(Creatinine)",0.284,0.005
+"P3","log(WBC)",0.144,0.044
+"P3","Bicarbonate",0.001,0.004

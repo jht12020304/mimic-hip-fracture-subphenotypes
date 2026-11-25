@@ -1,0 +1,16 @@
+# PhysioNet / MIMIC-IV patient-level data (NEVER commit to Git)
+*.duckdb
+*.duckdb.wal
+data/
+tables/*preadmit*.csv
+tables/*longitudinal*.csv
+*hip65*master*.csv
+*nonhip*preadmit*.csv
+
+# OS & R/Python artifacts
+.DS_Store
+.Rhistory
+.RData
+.Rproj.user/
+__pycache__/
+*.pyc
