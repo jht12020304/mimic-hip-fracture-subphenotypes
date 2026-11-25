@@ -355,8 +355,11 @@ ccw_all_det <- fit_strat_ccw(df_ccw_all, return_details = TRUE)
 d_grace <- ccw_all_det$dat[ccw_all_det$dat$t90 > 1.5, ]
 d_grace$w_ccw <- ifelse(d_grace$early_surg == 1, d_grace$sw1, d_grace$sw0)
 
-bal_vars <- c("admit_age","sex_m","fx_neck_all","fx_pertroch","cci_score","anticoag_flag","med_srv","hb_ps","log_cr_ps","log_wbc_ps","bicarbonate_ps")
-bal_lbls <- c("Age","Male sex","Femoral neck fracture","Pertrochanteric fracture","Charlson Index","Pre-admission anticoagulation","Medicine admitting service","Hemoglobin","log(Creatinine)","log(WBC)","Bicarbonate")
+# poLCA class enters the PS model as a 3-level factor; report balance for each non-reference level
+d_grace$lca2 <- as.numeric(d_grace$lca_f == "LCA2")
+d_grace$lca3 <- as.numeric(d_grace$lca_f == "LCA3")
+bal_vars <- c("admit_age","sex_m","fx_neck_all","fx_pertroch","cci_score","lca2","lca3","anticoag_flag","med_srv","hb_ps","log_cr_ps","log_wbc_ps","bicarbonate_ps")
+bal_lbls <- c("Age","Male sex","Femoral neck fracture","Pertrochanteric fracture","Charlson Index","Comorbidity class LCA2","Comorbidity class LCA3","Pre-admission anticoagulation","Medicine admitting service","Hemoglobin","log(Creatinine)","log(WBC)","Bicarbonate")
 smd_fn <- function(x, a, w = NULL) {
   if (is.null(w)) w <- rep(1, length(x))
   w1 <- w[a == 1]; x1 <- x[a == 1]; w0 <- w[a == 0]; x0 <- x[a == 0]
